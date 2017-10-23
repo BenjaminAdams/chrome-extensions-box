@@ -5,6 +5,7 @@ setTimeout(function () {
     var custEmail = null;
     var strikePrice = []
     var imgs = []
+    var prodTit = []
 
     addBtns()
     injectModal()
@@ -39,6 +40,9 @@ setTimeout(function () {
         $('#nyopEmail').val(custEmail)
         $('.strikePrice').html(strikePrice[index])
         $('.modalImg').html(imgs[index])
+        $('.prodTit').html(prodTit[index])
+        $('#nyopSku').val(sku)
+
 
         //$("#nyopSlider").val(price)
         //$("#nyopSlider").attr('max', price);
@@ -72,7 +76,9 @@ setTimeout(function () {
             strikePrice.push(obj.innerHTML)
         });
 
-
+        $('.ups-title').each(function (i, obj) {
+            prodTit.push(obj.innerHTML)
+        });
 
 
         $('.ups-image').each(function (i, obj) {
@@ -94,7 +100,10 @@ setTimeout(function () {
         // var slider = '<div id="slidecontainer"><input type="range" min="1" max="100" value="50" class="slider" id="nyopSlider"></div>'
         var price = '<p><label for="nyopPrice">Price</label><input type="text" id="nyopPrice" placeholder="$"></p>'
         var email = '<p><label for="nyopEmail">Email</label><input type="text" id="nyopEmail" placeholder="email"></p>'
-        var modalBody = '<div class="modal-body"> <div class="modalCenter"> <div class="modalImg"></div>  <div class="strikePrice"></div> </div> ' + email + price + '</div>'
+        var sku = '<p><input type="hidden" id="nyopSku"></p>'
+        var alertChk = '<p><input type="checkbox" id="nyopAlertChk"><label for="nyopAlertChk">Also alert me when the price changes</label></p>'
+        var submit = '<p><button class="btn btn-success submitNYOP" type="button">Submit</button></p>'
+        var modalBody = '<div class="modal-body"> <div class="modalCenter"> <div class="modalImg"></div> <div class="prodTit"></div>  <div class="strikePrice"></div> </div> ' + email + price + alertChk + sku + submit + '</div>'
         var theModal = $('<div id="nyopModal" class="modal special-offers-modal hide-element fade in">' + modalHeader + modalBody)
         $('body').append(theModal)
 
@@ -120,6 +129,28 @@ setTimeout(function () {
             var backdrop = $('.modal-backdrop')
             backdrop.remove()
         }
+
+        $('.submitNYOP').click(function () {
+            console.log('submiittings')
+
+            var data = {
+                "configItem": $('#nyopPrice').val(),
+                "userEmail": $('#nyopEmail').val(),
+                "setPrice": $('#nyopPrice').val()
+            }
+
+            $.ajax({
+                type: "POST",
+                url: 'http://asdasdasdsad.com',
+                data: data,
+                success: function (x, y, z) {
+                    console.log(x, y, z)
+                    console.log('success!')
+                },
+                //dataType: dataType
+            });
+        })
+
 
     }
 

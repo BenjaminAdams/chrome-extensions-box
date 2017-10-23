@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dell.Commerce.OpenBasket.PriceViews.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dell.Commerce.OpenBasket.PriceViews.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="AdjustmentSourceFormula">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Amount" />
+      <xs:enumeration value="Percentage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdjustmentSourceFormula" nillable="true" type="tns:AdjustmentSourceFormula" />
+</xs:schema>

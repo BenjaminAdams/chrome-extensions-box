@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dell.Commerce.OpenBasket" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dell.Commerce.OpenBasket" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="SEItem.ValExpressionMsgType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Error">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Warning">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SEItem.ValExpressionMsgType" nillable="true" type="tns:SEItem.ValExpressionMsgType" />
+  <xs:simpleType name="SEItem.ValExpressionSource">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Brand">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SEItem.ValExpressionSource" nillable="true" type="tns:SEItem.ValExpressionSource" />
+  <xs:complexType name="EstimatedDeliveryDayRange">
+    <xs:sequence>
+      <xs:element name="_x003C_Max_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Min_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstimatedDeliveryDayRange" nillable="true" type="tns:EstimatedDeliveryDayRange" />
+  <xs:complexType name="EstimatedShipDayRange">
+    <xs:sequence>
+      <xs:element name="_x003C_Max_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Min_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstimatedShipDayRange" nillable="true" type="tns:EstimatedShipDayRange" />
+  <xs:simpleType name="ProductType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Server" />
+      <xs:enumeration value="HBA" />
+      <xs:enumeration value="FiberChannelSwitch" />
+      <xs:enumeration value="DPE" />
+      <xs:enumeration value="DAE" />
+      <xs:enumeration value="Rack" />
+      <xs:enumeration value="Group" />
+      <xs:enumeration value="EthernetRackSwitch" />
+      <xs:enumeration value="TapeBackup" />
+      <xs:enumeration value="KVM" />
+      <xs:enumeration value="Blade" />
+      <xs:enumeration value="BladeServerEnclosure" />
+      <xs:enumeration value="Cluster" />
+      <xs:enumeration value="ValidationGroup" />
+      <xs:enumeration value="NAS" />
+      <xs:enumeration value="Upgrades" />
+      <xs:enumeration value="BladeSwitch" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="DiskArray" />
+      <xs:enumeration value="All" />
+      <xs:enumeration value="NIC" />
+      <xs:enumeration value="MultiPackShippingContainer" />
+      <xs:enumeration value="Desktop" />
+      <xs:enumeration value="Notebook" />
+      <xs:enumeration value="Software" />
+      <xs:enumeration value="InfiniBandSwitch" />
+      <xs:enumeration value="InfinibandHCA" />
+      <xs:enumeration value="Services" />
+      <xs:enumeration value="DiskBackup" />
+      <xs:enumeration value="EqualLogic" />
+      <xs:enumeration value="DataCenterSolutions" />
+      <xs:enumeration value="APOS" />
+      <xs:enumeration value="FlexComputing" />
+      <xs:enumeration value="Workstation" />
+      <xs:enumeration value="EthernetChassisSwitch" />
+      <xs:enumeration value="StandardConfigProduct">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1000</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FullCatalogProduct">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1001</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VelocityService">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1002</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProductType" nillable="true" type="tns:ProductType" />
+</xs:schema>

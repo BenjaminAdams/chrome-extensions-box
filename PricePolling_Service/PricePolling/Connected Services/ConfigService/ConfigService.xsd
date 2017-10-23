@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Dell.Product.TAACompliance/ComplianceFlags" elementFormDefault="qualified" targetNamespace="http://Dell.Product.TAACompliance/ComplianceFlags" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ComplianceFlags">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PrimaryContractCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="RequiresGSA" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RequiresTAA" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RequiresTAANotification" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SecondaryContractCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryContractCodeDesc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComplianceFlags" nillable="true" type="tns:ComplianceFlags" />
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Dell.Product.TAACompliance/ItemForTAACheck" elementFormDefault="qualified" targetNamespace="http://Dell.Product.TAACompliance/ItemForTAACheck" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfItemForTAACheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemForTAACheck" nillable="true" type="tns:ItemForTAACheck" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemForTAACheck" nillable="true" type="tns:ArrayOfItemForTAACheck" />
+  <xs:complexType name="ItemForTAACheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CostTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryOfOriginCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsBase" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFactoryInstalledFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReplacementPart" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsThirdPartySku" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTiedToBase" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sku" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemForTAACheck" nillable="true" type="tns:ItemForTAACheck" />
+</xs:schema>

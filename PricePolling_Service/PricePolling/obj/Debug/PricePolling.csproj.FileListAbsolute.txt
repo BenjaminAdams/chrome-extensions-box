@@ -1,0 +1,11 @@
+c:\users\madhu_vedhagirisubra\documents\visual studio 2017\Projects\PricePolling\PricePolling\obj\Debug\PricePolling.csprojResolveAssemblyReference.cache
+c:\users\madhu_vedhagirisubra\documents\visual studio 2017\Projects\PricePolling\PricePolling\obj\Debug\PricePolling.csproj.CoreCompileInputs.cache
+c:\users\madhu_vedhagirisubra\documents\visual studio 2017\Projects\PricePolling\PricePolling\bin\Debug\PricePolling.exe.config
+c:\users\madhu_vedhagirisubra\documents\visual studio 2017\Projects\PricePolling\PricePolling\bin\Debug\PricePolling.exe
+c:\users\madhu_vedhagirisubra\documents\visual studio 2017\Projects\PricePolling\PricePolling\bin\Debug\PricePolling.pdb
+c:\users\madhu_vedhagirisubra\documents\visual studio 2017\Projects\PricePolling\PricePolling\obj\Debug\PricePolling.exe
+c:\users\madhu_vedhagirisubra\documents\visual studio 2017\Projects\PricePolling\PricePolling\obj\Debug\PricePolling.pdb
+c:\users\madhu_vedhagirisubra\documents\visual studio 2017\Projects\PricePolling\PricePolling\obj\Debug\PricePolling.Polling.resources
+c:\users\madhu_vedhagirisubra\documents\visual studio 2017\Projects\PricePolling\PricePolling\obj\Debug\PricePolling.csproj.GenerateResource.Cache
+c:\users\madhu_vedhagirisubra\documents\visual studio 2017\Projects\PricePolling\PricePolling\obj\Debug\PricePolling.ProjectInstaller.resources
+c:\users\madhu_vedhagirisubra\documents\visual studio 2017\Projects\PricePolling\PricePolling\bin\Debug\Newtonsoft.Json.dll

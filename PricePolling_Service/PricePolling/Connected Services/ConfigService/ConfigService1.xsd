@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dell.Config.Service.Contracts.V3" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dell.Config.Service.Contracts.V3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd2" namespace="http://eDell.dell.com/product/schema/v3" />
+  <xs:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ATSInventoryStatusModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ATSIntransits" nillable="true" type="tns:ArrayOfATSIntransitModel" />
+      <xs:element minOccurs="0" name="ATSLeadTime" type="xs:int" />
+      <xs:element minOccurs="0" name="AvailableToSell" type="xs:int" />
+      <xs:element minOccurs="0" name="InTransitStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InventoryLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InventoryStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFastTrackEligible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSDSEligible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSuccessful" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SkuId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATSInventoryStatusModel" nillable="true" type="tns:ATSInventoryStatusModel" />
+  <xs:complexType name="ArrayOfATSIntransitModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ATSIntransitModel" nillable="true" type="tns:ATSIntransitModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfATSIntransitModel" nillable="true" type="tns:ArrayOfATSIntransitModel" />
+  <xs:complexType name="ATSIntransitModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EstimatedArrival" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MergeCenter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TransportMode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATSIntransitModel" nillable="true" type="tns:ATSIntransitModel" />
+  <xs:complexType name="ExchangeOrderCodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedItems" nillable="true" type="tns:AddedItems" />
+      <xs:element xmlns:q1="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="ExchangeOrdeCodeModel" nillable="true" type="q1:ConfigModel" />
+      <xs:element minOccurs="0" name="ModulesNeedingSelection" nillable="true" type="tns:ModulesNeedingSelection" />
+      <xs:element minOccurs="0" name="RequestItemsNotFound" nillable="true" type="tns:RequestItemsNotFound" />
+      <xs:element minOccurs="0" name="ResponseException" nillable="true" type="tns:ResponseException" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExchangeOrderCodeResponse" nillable="true" type="tns:ExchangeOrderCodeResponse" />
+  <xs:complexType name="AddedItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExchangeOrderAddedModule" nillable="true" type="tns:ArrayOfExchangeOrderAddMandatoryMissingModule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddedItems" nillable="true" type="tns:AddedItems" />
+  <xs:complexType name="ArrayOfExchangeOrderAddMandatoryMissingModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExchangeOrderAddMandatoryMissingModule" nillable="true" type="tns:ExchangeOrderAddMandatoryMissingModule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExchangeOrderAddMandatoryMissingModule" nillable="true" type="tns:ArrayOfExchangeOrderAddMandatoryMissingModule" />
+  <xs:complexType name="ExchangeOrderAddMandatoryMissingModule">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExchangeOrderSkuIds" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ModuleId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OptionId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExchangeOrderAddMandatoryMissingModule" nillable="true" type="tns:ExchangeOrderAddMandatoryMissingModule" />
+  <xs:complexType name="ModulesNeedingSelection">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ModuleId" nillable="true" type="q3:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModulesNeedingSelection" nillable="true" type="tns:ModulesNeedingSelection" />
+  <xs:complexType name="RequestItemsNotFound">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExchangeOrderSkuIdNotexists" nillable="true" type="q4:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestItemsNotFound" nillable="true" type="tns:RequestItemsNotFound" />
+  <xs:complexType name="ResponseException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExceptionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExceptionMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseException" nillable="true" type="tns:ResponseException" />
+</xs:schema>

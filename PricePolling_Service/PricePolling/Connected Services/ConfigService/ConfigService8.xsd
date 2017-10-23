@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dell.Config.Service.Contracts.V3.ARB" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dell.Config.Service.Contracts.V3.ARB" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ARBSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARBRWarrantyAccessoryNumbers" nillable="true" type="tns:ARBRWarrantyAccessoryNumbers" />
+      <xs:element minOccurs="0" name="ArbAccessoryNumbers" nillable="true" type="tns:ARBAccessoryNumbers" />
+      <xs:element minOccurs="0" name="Buid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HoldingId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsOnline" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocalChannel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MinQuantity" type="xs:int" />
+      <xs:element minOccurs="0" name="StandAloneMonitorAccessoryNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ARBSettings" nillable="true" type="tns:ARBSettings" />
+  <xs:complexType name="ARBRWarrantyAccessoryNumbers">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ARBRWarrantyAccessoryNumber" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ARBRWarrantyAccessoryNumbers" nillable="true" type="tns:ARBRWarrantyAccessoryNumbers" />
+  <xs:complexType name="ARBAccessoryNumbers">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AccessoryNumber" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ARBAccessoryNumbers" nillable="true" type="tns:ARBAccessoryNumbers" />
+</xs:schema>

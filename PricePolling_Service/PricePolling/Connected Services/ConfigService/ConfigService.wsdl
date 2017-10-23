@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://eDell.dell.com/product/contract/configService/v3" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://eDell.dell.com/product/contract/configService/v3" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://eDell.dell.com/product/contract/configService/v3/Imports">
+      <xsd:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd0" namespace="http://eDell.dell.com/product/contract/configService/v3" />
+      <xsd:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd2" namespace="http://eDell.dell.com/product/schema/v3" />
+      <xsd:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Dell.Config.Service.Contracts.V3.ARB" />
+      <xsd:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd5" namespace="http://eDell.dell.com/commerce/schema/v1" />
+      <xsd:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd6" namespace="http://Dell.Product.TAACompliance/ComplianceFlags" />
+      <xsd:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Dell.Commerce.OpenBasket" />
+      <xsd:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Dell.Commerce.OpenBasket.PriceViews.Enumerations" />
+      <xsd:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd9" namespace="http://Dell.Product.TAACompliance/ItemForTAACheck" />
+      <xsd:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Dell.Config.Service.Contracts.V3" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IConfigService_ProcessRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequest" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequest_ConfigExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://eDell.dell.com/product/schema/v3" name="detail" element="q1:ConfigExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestForChannelServiceCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestForChannelServiceCard" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestForChannelServiceCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestForChannelServiceCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestForChannelServiceCard_ConfigExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://eDell.dell.com/product/schema/v3" name="detail" element="q2:ConfigExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestForTestHarness_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestForTestHarness" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestForTestHarness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestForTestHarnessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestForTestHarness_ConfigExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://eDell.dell.com/product/schema/v3" name="detail" element="q3:ConfigExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestList" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestList_ConfigExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://eDell.dell.com/product/schema/v3" name="detail" element="q4:ConfigExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestAsConfigItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestAsConfigItem" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestAsConfigItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestAsConfigItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestAsConfigItem_ConfigExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://eDell.dell.com/product/schema/v3" name="detail" element="q5:ConfigExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestAsItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestAsItem" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestAsItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestAsItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestAsItem_ConfigExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://eDell.dell.com/product/schema/v3" name="detail" element="q6:ConfigExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestAsFullConfigItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestAsFullConfigItem" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestAsFullConfigItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestAsFullConfigItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestAsFullConfigItem_ConfigExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://eDell.dell.com/product/schema/v3" name="detail" element="q7:ConfigExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessDeltaRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessDeltaRequest" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessDeltaRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessDeltaRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessDeltaRequest_ConfigExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://eDell.dell.com/product/schema/v3" name="detail" element="q8:ConfigExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_RetrieveConfigModules_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveConfigModules" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_RetrieveConfigModules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveConfigModulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestSelectionsCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestSelectionsCode" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestSelectionsCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestSelectionsCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessRequestSelectionsCode_ConfigExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://eDell.dell.com/product/schema/v3" name="detail" element="q9:ConfigExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessFlavorsForDraftConfigRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessFlavorsForDraftConfigRequest" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessFlavorsForDraftConfigRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessFlavorsForDraftConfigRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessFlavorsForDraftConfigRequest_ConfigExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://eDell.dell.com/product/schema/v3" name="detail" element="q10:ConfigExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessExchangeOrdercodeRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessExchangeOrdercodeRequest" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessExchangeOrdercodeRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessExchangeOrdercodeRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessExchangeOrdercodeRequest_ConfigExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://eDell.dell.com/product/schema/v3" name="detail" element="q11:ConfigExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessSelectionCodeForChannelServiceCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessSelectionCodeForChannelServiceCard" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessSelectionCodeForChannelServiceCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessSelectionCodeForChannelServiceCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConfigService_ProcessSelectionCodeForChannelServiceCard_ConfigExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://eDell.dell.com/product/schema/v3" name="detail" element="q12:ConfigExceptionDetail" />
+  </wsdl:message>
+  <wsdl:portType name="IConfigService">
+    <wsdl:operation name="ProcessRequest">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequest" message="tns:IConfigService_ProcessRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestResponse" message="tns:IConfigService_ProcessRequest_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestConfigExceptionDetailFault" name="ConfigExceptionDetailFault" message="tns:IConfigService_ProcessRequest_ConfigExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRequestForChannelServiceCard">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestForChannelServiceCard" message="tns:IConfigService_ProcessRequestForChannelServiceCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestForChannelServiceCardResponse" message="tns:IConfigService_ProcessRequestForChannelServiceCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestForChannelServiceCardConfigExceptionDetailFault" name="ConfigExceptionDetailFault" message="tns:IConfigService_ProcessRequestForChannelServiceCard_ConfigExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRequestForTestHarness">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestForTestHarness" message="tns:IConfigService_ProcessRequestForTestHarness_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestForTestHarnessResponse" message="tns:IConfigService_ProcessRequestForTestHarness_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestForTestHarnessConfigExceptionDetailFault" name="ConfigExceptionDetailFault" message="tns:IConfigService_ProcessRequestForTestHarness_ConfigExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRequestList">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestList" message="tns:IConfigService_ProcessRequestList_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestListResponse" message="tns:IConfigService_ProcessRequestList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestListConfigExceptionDetailFault" name="ConfigExceptionDetailFault" message="tns:IConfigService_ProcessRequestList_ConfigExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRequestAsConfigItem">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestAsConfigItem" message="tns:IConfigService_ProcessRequestAsConfigItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestAsConfigItemResponse" message="tns:IConfigService_ProcessRequestAsConfigItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestAsConfigItemConfigExceptionDetailFault" name="ConfigExceptionDetailFault" message="tns:IConfigService_ProcessRequestAsConfigItem_ConfigExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRequestAsItem">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestAsItem" message="tns:IConfigService_ProcessRequestAsItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestAsItemResponse" message="tns:IConfigService_ProcessRequestAsItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestAsItemConfigExceptionDetailFault" name="ConfigExceptionDetailFault" message="tns:IConfigService_ProcessRequestAsItem_ConfigExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRequestAsFullConfigItem">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestAsFullConfigItem" message="tns:IConfigService_ProcessRequestAsFullConfigItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestAsFullConfigItemResponse" message="tns:IConfigService_ProcessRequestAsFullConfigItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestAsFullConfigItemConfigExceptionDetailFault" name="ConfigExceptionDetailFault" message="tns:IConfigService_ProcessRequestAsFullConfigItem_ConfigExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDeltaRequest">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessDeltaRequest" message="tns:IConfigService_ProcessDeltaRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessDeltaRequestResponse" message="tns:IConfigService_ProcessDeltaRequest_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessDeltaRequestConfigExceptionDetailFault" name="ConfigExceptionDetailFault" message="tns:IConfigService_ProcessDeltaRequest_ConfigExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveConfigModules">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/RetrieveConfigModules" message="tns:IConfigService_RetrieveConfigModules_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/RetrieveConfigModulesResponse" message="tns:IConfigService_RetrieveConfigModules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRequestSelectionsCode">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestSelectionsCode" message="tns:IConfigService_ProcessRequestSelectionsCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestSelectionsCodeResponse" message="tns:IConfigService_ProcessRequestSelectionsCode_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessRequestSelectionsCodeConfigExceptionDetailFault" name="ConfigExceptionDetailFault" message="tns:IConfigService_ProcessRequestSelectionsCode_ConfigExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessFlavorsForDraftConfigRequest">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessFlavorsForDraftConfigRequest" message="tns:IConfigService_ProcessFlavorsForDraftConfigRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessFlavorsForDraftConfigRequestResponse" message="tns:IConfigService_ProcessFlavorsForDraftConfigRequest_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessFlavorsForDraftConfigRequestConfigExceptionDetailFault" name="ConfigExceptionDetailFault" message="tns:IConfigService_ProcessFlavorsForDraftConfigRequest_ConfigExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessExchangeOrdercodeRequest">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessExchangeOrdercodeRequest" message="tns:IConfigService_ProcessExchangeOrdercodeRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessExchangeOrdercodeRequestResponse" message="tns:IConfigService_ProcessExchangeOrdercodeRequest_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessExchangeOrdercodeRequestConfigExceptionDetailFault" name="ConfigExceptionDetailFault" message="tns:IConfigService_ProcessExchangeOrdercodeRequest_ConfigExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessSelectionCodeForChannelServiceCard">
+      <wsdl:input wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessSelectionCodeForChannelServiceCard" message="tns:IConfigService_ProcessSelectionCodeForChannelServiceCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessSelectionCodeForChannelServiceCardResponse" message="tns:IConfigService_ProcessSelectionCodeForChannelServiceCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://eDell.dell.com/product/contract/configService/v3/IConfigService/ProcessSelectionCodeForChannelServiceCardConfigExceptionDetailFault" name="ConfigExceptionDetailFault" message="tns:IConfigService_ProcessSelectionCodeForChannelServiceCard_ConfigExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0d84f0dc-4f87-409e-b807-9d0c709324b5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ConfigService.xsd" MetadataType="Schema" ID="7e3c0edd-9cd1-4aa0-bfad-aaf747f0673b" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ConfigService.disco" MetadataType="Disco" ID="9b880171-d6d5-4682-a9b9-4a9bb39f4b5f" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?disco" />
+    <MetadataFile FileName="ConfigService1.xsd" MetadataType="Schema" ID="5472a06e-05ed-46d8-9c76-6cc037de53dc" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd10" />
+    <MetadataFile FileName="ConfigService2.xsd" MetadataType="Schema" ID="ff5df12c-0b2f-4641-a34a-51723c9e1671" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd9" />
+    <MetadataFile FileName="ConfigService3.xsd" MetadataType="Schema" ID="b869bb67-cc76-43f5-b840-1c6c9ad3109b" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ConfigService.wsdl" MetadataType="Wsdl" ID="a2e965b8-1e53-46d7-869b-1458da289894" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ConfigService4.xsd" MetadataType="Schema" ID="3158edfd-8db9-4107-ad40-b0cfdefef1e6" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ConfigService1.wsdl" MetadataType="Wsdl" ID="dfc93ee8-5193-464b-8c15-0d73bed009f2" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?wsdl" />
+    <MetadataFile FileName="ConfigService5.xsd" MetadataType="Schema" ID="2b1907e7-be10-47d9-87b8-9453db3859ba" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd8" />
+    <MetadataFile FileName="ConfigService6.xsd" MetadataType="Schema" ID="98cb20a5-a581-4497-9c7b-81601d6a31a2" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ConfigService7.xsd" MetadataType="Schema" ID="d125a32a-fef6-4dea-9f2b-a89d45b57bdd" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ConfigService8.xsd" MetadataType="Schema" ID="3f77958a-4f16-4601-bd7f-414bcf928d16" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ConfigService9.xsd" MetadataType="Schema" ID="58c5dc6e-8d4f-4646-ac8b-5f0c71614347" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ConfigService10.xsd" MetadataType="Schema" ID="f9671f1f-aaf4-4dcc-bf4c-6440c33ab06b" SourceId="1" SourceUrl="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

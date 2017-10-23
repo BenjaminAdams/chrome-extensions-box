@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eDell.dell.com/product/contract/configService/v3" elementFormDefault="qualified" targetNamespace="http://eDell.dell.com/product/contract/configService/v3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd2" namespace="http://eDell.dell.com/product/schema/v3" />
+  <xs:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd5" namespace="http://eDell.dell.com/commerce/schema/v1" />
+  <xs:import schemaLocation="http://g4vmconfigsvc01.olqa.preol.dell.com:8080/ConfigService/V3/ConfigService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Dell.Config.Service.Contracts.V3" />
+  <xs:element name="ProcessRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q1:ConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="ProcessRequestResult" nillable="true" type="q2:ConfigModel" />
+        <xs:element xmlns:q3="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q3:ConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestForChannelServiceCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="channelRequest" nillable="true" type="q4:ChannelRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestForChannelServiceCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="ProcessRequestForChannelServiceCardResult" nillable="true" type="q5:ChannelConfigModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestForTestHarness">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="channelRequest" nillable="true" type="q6:ChannelRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestForTestHarnessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="ProcessRequestForTestHarnessResult" nillable="true" type="q7:ConfigModel" />
+        <xs:element minOccurs="0" name="BillServiceResponseTime" type="xs:long" />
+        <xs:element minOccurs="0" name="ConfigRequestResponseTime" type="xs:long" />
+        <xs:element minOccurs="0" name="BillSDRResponse" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="configRequestFromBILSDR" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SEItemString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PDSLResponse" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="requests" nillable="true" type="q8:ArrayOfConfigRequest" />
+        <xs:element minOccurs="0" name="isConfigRequestNeededToBeReturned" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="ProcessRequestListResult" nillable="true" type="q9:ArrayOfProcessRequestResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestAsConfigItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q10:ConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestAsConfigItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://eDell.dell.com/commerce/schema/v1" minOccurs="0" name="ProcessRequestAsConfigItemResult" nillable="true" type="q11:ConfigItem" />
+        <xs:element xmlns:q12="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q12:ConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestAsItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q13:ConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestAsItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://eDell.dell.com/commerce/schema/v1" minOccurs="0" name="ProcessRequestAsItemResult" nillable="true" type="q14:Item" />
+        <xs:element xmlns:q15="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q15:ConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestAsFullConfigItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q16:ConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestAsFullConfigItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://eDell.dell.com/commerce/schema/v1" minOccurs="0" name="ProcessRequestAsFullConfigItemResult" nillable="true" type="q17:ConfigItem" />
+        <xs:element xmlns:q18="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q18:ConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessDeltaRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q19:ConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessDeltaRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="ProcessDeltaRequestResult" nillable="true" type="q20:ConfigModel" />
+        <xs:element xmlns:q21="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q21:ConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveConfigModules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q22:ConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveConfigModulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="RetrieveConfigModulesResult" nillable="true" type="q23:ModulesListModel" />
+        <xs:element xmlns:q24="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q24:ConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestSelectionsCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="selectionsCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestSelectionsCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="ProcessRequestSelectionsCodeResult" nillable="true" type="q25:ConfigModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessFlavorsForDraftConfigRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://eDell.dell.com/commerce/schema/v1" minOccurs="0" name="configItem" nillable="true" type="q26:ConfigItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessFlavorsForDraftConfigRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://eDell.dell.com/commerce/schema/v1" minOccurs="0" name="ProcessFlavorsForDraftConfigRequestResult" nillable="true" type="q27:ConfigItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessExchangeOrdercodeRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="request" nillable="true" type="q28:ExchangeOrderCodeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessExchangeOrdercodeRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Dell.Config.Service.Contracts.V3" minOccurs="0" name="ProcessExchangeOrdercodeRequestResult" nillable="true" type="q29:ExchangeOrderCodeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessSelectionCodeForChannelServiceCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="channelRequest" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessSelectionCodeForChannelServiceCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://eDell.dell.com/product/schema/v3" minOccurs="0" name="ProcessSelectionCodeForChannelServiceCardResult" nillable="true" type="q30:ChannelConfigModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

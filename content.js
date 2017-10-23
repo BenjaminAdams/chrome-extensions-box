@@ -32,11 +32,15 @@ setTimeout(function () {
     $('.nyopBtn').click(function (e) {
         var target = $(e.currentTarget)
         var sku = target.data('sku')
-        var price = target.data('price')
+        var price = target.data('price').replace('$', '')
         console.log('sku=', sku)
         console.log('price=', price)
         $('#nyopModal').show()
         $('#nyopEmail').val(custEmail)
+        $("#nyopSlider").val(price)
+        $("#nyopSlider").attr('max', price);
+        document.getElementById("nyopSlider").max = price
+        $("#nyopPrice").val(price)
     })
 
 
@@ -85,14 +89,31 @@ function showPopup() {
 function injectModal() {
     var closeBtn = '<button type="button" class="close closeNyopModal" data-dismiss="modal" aria-hidden="true"></button>'
     var modalHeader = '<div class="modal-header">Name your own price ' + closeBtn + '</div>'
+    var slider = '<div id="slidecontainer"><input type="range" min="1" max="100" value="50" class="slider" id="nyopSlider"></div>'
+    var price = '<p><label for="nyopPrice">Price</label><input type="text" id="nyopPrice" placeholder="$"></p>'
     var email = '<p><label for="nyopEmail">Email</label><input type="text" id="nyopEmail" placeholder="email"></p>'
-    var modalBody = '<div class="modal-body">' + email + '</div>'
+    var modalBody = '<div class="modal-body">' + email + slider + price + '</div>'
     var theModal = $('<div id="nyopModal" class="modal special-offers-modal hide-element fade in">' + modalHeader + modalBody)
     $('body').append(theModal)
 
     $('.closeNyopModal').click(function () {
         theModal.hide()
     })
+
+    $price = $('#nyopPrice')
+
+    var slider = document.getElementById("nyopSlider");
+    slider.oninput = function () {
+        $price.val(this.value);
+    }
+
+    window.onclick = function (event) {
+        if (event.target == theModal) {
+            theModal.hide()
+        }
+    }
+
+
 }
 
 

@@ -31,8 +31,12 @@ setTimeout(function () {
 
     $('.nyopBtn').click(function (e) {
         var target = $(e.currentTarget)
-        var parent = target.parent()
-        var parent2 = parent.parent()
+        var sku = target.data('sku')
+        var price = target.data('price')
+        console.log('sku=', sku)
+        console.log('price=', price)
+        $('#nyopModal').show()
+        $('#nyopEmail').val(custEmail)
     })
 
 
@@ -40,8 +44,36 @@ setTimeout(function () {
 
 
 function addBtns() {
-    var $btn = $('<button class="btn btn-success btn-sm nyopBtn" type="button">Name your own price</button>')
-    $('.ups-simple-price > .ng-scope').after($btn)
+
+    var skus = []
+    var prices = []
+
+    $('.ups-evaluecode').each(function (i, obj) {
+        var txt = obj.innerText
+        var split = txt.split(' ')
+        if (!split) return console.log('could not find a sku from txt ' + txt)
+        var sku = split[split.length - 1]
+        skus.push(sku)
+    });
+
+
+    $('.ups-simple-price').each(function (i, obj) {
+        var txt = obj.innerText
+        var split = txt.split(' ')
+        if (!split) return console.log('could not find a price from txt ' + txt)
+        var price = split[split.length - 1]
+        prices.push(price)
+    });
+
+
+    $('.ups-simple-price > .ng-scope').each(function (i, obj) {
+        var $btn = $('<button class="btn btn-success btn-sm nyopBtn" type="button" data-price="' + prices[i] + '" data-sku="' + skus[i] + '">Name your own price</button>')
+        $(obj).after($btn)
+
+    });
+
+    //var $btn = $('<button class="btn btn-success btn-sm nyopBtn" type="button">Name your own price</button>')
+    // $('.ups-simple-price > .ng-scope').after($btn)
     // $btn.click(showPopup)
 }
 
@@ -51,7 +83,16 @@ function showPopup() {
 }
 
 function injectModal() {
+    var closeBtn = '<button type="button" class="close closeNyopModal" data-dismiss="modal" aria-hidden="true"></button>'
+    var modalHeader = '<div class="modal-header">Name your own price ' + closeBtn + '</div>'
+    var email = '<p><label for="nyopEmail">Email</label><input type="text" id="nyopEmail" placeholder="email"></p>'
+    var modalBody = '<div class="modal-body">' + email + '</div>'
+    var theModal = $('<div id="nyopModal" class="modal special-offers-modal hide-element fade in">' + modalHeader + modalBody)
+    $('body').append(theModal)
 
+    $('.closeNyopModal').click(function () {
+        theModal.hide()
+    })
 }
 
 

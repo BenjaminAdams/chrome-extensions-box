@@ -98,7 +98,7 @@ setTimeout(function () {
         var closeBtn = '<button type="button" class="close closeNyopModal" data-dismiss="modal" aria-hidden="true"></button>'
         var modalHeader = '<div class="modal-header">Name your own price ' + closeBtn + '</div>'
         // var slider = '<div id="slidecontainer"><input type="range" min="1" max="100" value="50" class="slider" id="nyopSlider"></div>'
-        var price = '<p><label for="nyopPrice">Price</label><input type="text" id="nyopPrice" placeholder="$"></p>'
+        var price = '<p><label for="nyopPrice">Your offer</label><input type="text" id="nyopPrice" placeholder="$"></p>'
         var email = '<p><label for="nyopEmail">Email</label><input type="text" id="nyopEmail" placeholder="email"></p>'
         var sku = '<p><input type="hidden" id="nyopSku"></p>'
         var alertChk = '<p><input type="checkbox" id="nyopAlertChk"><label for="nyopAlertChk">Also alert me when the price changes</label></p>'

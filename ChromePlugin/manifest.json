@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "dell_NYOP",
+    "name": "Dell - Name your own price",
     "description": "Dell name your own price",
     "version": "0.1.0",
     "permissions": [

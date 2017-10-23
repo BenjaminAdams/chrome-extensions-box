@@ -103,7 +103,7 @@ setTimeout(function () {
         var sku = '<p><input type="hidden" id="nyopSku"></p>'
         var alertChk = '<p><input type="checkbox" id="nyopAlertChk"><label for="nyopAlertChk">Also alert me when the price changes</label></p>'
         var submit = '<p><button class="btn btn-success submitNYOP" type="button">Submit</button></p>'
-        var blurb = '<p>Dell will email you when the price goes below your bid</p>'
+        var blurb = '<p><small>The <strong>name your own price feature</strong> allows you to set the price you would like to pay for this product. You will receive an order acknowledgement email stating that we have received your price match request and your order has been placed in a draft state. Once the Dell product price matches the threshold amount set by you we will complete your order. A confirmation email with product and shipping details will be sent to you in a separate email. </small></p>'
         var modalBody = '<div class="modal-body"> <div class="modalCenter"> ' + blurb + ' <div class="modalImg"></div> <div class="prodTit"></div>  <div class="strikePrice"></div> </div> ' + email + price + alertChk + sku + submit + '</div>'
         var theModal = $('<div id="nyopModal" class="modal special-offers-modal hide-element fade in">' + modalHeader + modalBody)
         $('body').append(theModal)
@@ -136,23 +136,33 @@ setTimeout(function () {
                 "configItem": $('#nyopPrice').val(),
                 "userEmail": $('#nyopEmail').val(),
                 "setPrice": $('#nyopPrice').val(),
-                "alertOnChange": $('#nyopAlertChk').val() === 'on' ? true : false,
+                "alertOnChange": $('#nyopAlertChk').is(":checked"),
             }
 
             $.ajax({
                 type: "POST",
                 url: 'http://dv1vmpmtui01.oldev.preol.dell.com:1000/PriceSet/api/values ',
                 data: data,
-                dataType: 'json',
-                success: function (x, y, z) {
+
+                success: function allDone() {
                     console.log('success!')
                     alert('Success, we will email you if the price falls below your bid')
                     hideModal()
-                }
+                },
+                fail: function (x) {
+                    alert("There was an error: " + x);
+                },
+                done: allDone
 
             });
         })
 
+
+        function allDone() {
+            console.log('success!')
+            alert('Success, we will email you if the price falls below your bid')
+            hideModal()
+        }
 
     }
 

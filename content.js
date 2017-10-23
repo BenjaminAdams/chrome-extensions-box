@@ -103,7 +103,8 @@ setTimeout(function () {
         var sku = '<p><input type="hidden" id="nyopSku"></p>'
         var alertChk = '<p><input type="checkbox" id="nyopAlertChk"><label for="nyopAlertChk">Also alert me when the price changes</label></p>'
         var submit = '<p><button class="btn btn-success submitNYOP" type="button">Submit</button></p>'
-        var modalBody = '<div class="modal-body"> <div class="modalCenter"> <div class="modalImg"></div> <div class="prodTit"></div>  <div class="strikePrice"></div> </div> ' + email + price + alertChk + sku + submit + '</div>'
+        var blurb = '<p>Dell will email you when the price goes below your bid</p>'
+        var modalBody = '<div class="modal-body"> <div class="modalCenter"> ' + blurb + ' <div class="modalImg"></div> <div class="prodTit"></div>  <div class="strikePrice"></div> </div> ' + email + price + alertChk + sku + submit + '</div>'
         var theModal = $('<div id="nyopModal" class="modal special-offers-modal hide-element fade in">' + modalHeader + modalBody)
         $('body').append(theModal)
 
@@ -131,23 +132,24 @@ setTimeout(function () {
         }
 
         $('.submitNYOP').click(function () {
-            console.log('submiittings')
-
             var data = {
                 "configItem": $('#nyopPrice').val(),
                 "userEmail": $('#nyopEmail').val(),
-                "setPrice": $('#nyopPrice').val()
+                "setPrice": $('#nyopPrice').val(),
+                "alertOnChange": $('#nyopAlertChk').val() === 'on' ? true : false,
             }
 
             $.ajax({
                 type: "POST",
-                url: 'http://asdasdasdsad.com',
+                url: 'http://dv1vmpmtui01.oldev.preol.dell.com:1000/PriceSet/api/values ',
                 data: data,
+                dataType: 'json',
                 success: function (x, y, z) {
-                    console.log(x, y, z)
                     console.log('success!')
-                },
-                //dataType: dataType
+                    alert('Success, we will email you if the price falls below your bid')
+                    hideModal()
+                }
+
             });
         })
 

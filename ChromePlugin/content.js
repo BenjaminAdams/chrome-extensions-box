@@ -1,7 +1,7 @@
 
 
 
-setTimeout(function () {
+setTimeout(function initNyop () {
     var custEmail = null;
     var strikePrice = []
     var imgs = []
@@ -85,6 +85,11 @@ setTimeout(function () {
             imgs.push(obj.innerHTML)
         });
 
+
+        $('.ps-simple-price').each(function (i, obj) {
+            var $btn = $('<button class="btn btn-success btn-sm nyopBtn" type="button" data-index="' + i + '"  data-price="' + prices[i] + '" data-sku="' + skus[i] + '">Name your own price</button>')
+            $(obj).after($btn)
+        });
 
         $('.ups-simple-price > .ng-scope').each(function (i, obj) {
             var $btn = $('<button class="btn btn-success btn-sm nyopBtn" type="button" data-index="' + i + '"  data-price="' + prices[i] + '" data-sku="' + skus[i] + '">Name your own price</button>')
